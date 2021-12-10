@@ -19,7 +19,7 @@ public class ExtraTask {
     }
 }
 
-@Repeat(3)
+
 class MyRunnable implements Runnable {
 
     @Override
@@ -36,6 +36,10 @@ class CustomThreadPoolExecutor extends ThreadPoolExecutor {
 
     @Override
     public void execute(Runnable command) {
+        if (command.getClass().getAnnotation(Repeat.class)==null)
+        {
+            super.execute(command);
+        } else
         for (int i = 0; i < command.getClass().getAnnotation(Repeat.class).value();i++) {
             super.execute(command);
         }
