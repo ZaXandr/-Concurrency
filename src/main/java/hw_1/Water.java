@@ -5,6 +5,8 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 public class Water {
+
+
     public static void main(String[] args) {
         var waterBarrier = new CyclicBarrier(3);
 
@@ -29,13 +31,13 @@ class HydrogenThread extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i < 100; i++) {
+        while(true) {
 
             {
                 try {
-                    releaseHydrogen();
                     cyclicBarrier.await();
-                    Thread.sleep(200);
+                    releaseHydrogen();
+                  //  Thread.sleep(1000);
                     int await = cyclicBarrier.await();
                     if (await == 0) {
                         System.out.println();
@@ -62,13 +64,13 @@ class OxygenThread extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i < 100; i++) {
+        while(true) {
 
             {
                 try {
-                    releaseOxygen();
                     cyclicBarrier.await();
-                    Thread.sleep(200);
+                    releaseOxygen();
+                 //   Thread.sleep(100);
                     if (cyclicBarrier.await() == 0) {
                         System.out.println();
                     }
