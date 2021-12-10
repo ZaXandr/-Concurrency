@@ -19,7 +19,7 @@ public class ExtraTask {
     }
 }
 
-
+@Repeat(3)
 class MyRunnable implements Runnable {
 
     @Override

@@ -35,8 +35,8 @@ class HydrogenThread extends Thread {
 
             {
                 try {
-                    cyclicBarrier.await();
                     releaseHydrogen();
+                    cyclicBarrier.await();
                   //  Thread.sleep(1000);
                     int await = cyclicBarrier.await();
                     if (await == 0) {
@@ -68,8 +68,8 @@ class OxygenThread extends Thread {
 
             {
                 try {
-                    cyclicBarrier.await();
                     releaseOxygen();
+                    cyclicBarrier.await();
                  //   Thread.sleep(100);
                     if (cyclicBarrier.await() == 0) {
                         System.out.println();
