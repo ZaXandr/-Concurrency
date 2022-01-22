@@ -1,4 +1,4 @@
-package com.zakharov.Annotation;
+package com.zakharov.annotation;
 
 
 import java.util.concurrent.*;

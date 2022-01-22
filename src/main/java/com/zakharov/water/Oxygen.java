@@ -1,4 +1,4 @@
-package com.zakharov.Water;
+package com.zakharov.water;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
@@ -6,8 +6,8 @@ import java.util.concurrent.Semaphore;
 
 public class Oxygen extends Thread {
 
-    private static Semaphore oxygenBarrier;
-    private static CyclicBarrier moleculeBarrier;
+    private  Semaphore oxygenBarrier;
+    private  CyclicBarrier moleculeBarrier;
 
 
     public Oxygen(Semaphore oxygenBarrier, CyclicBarrier moleculeBarrier) {

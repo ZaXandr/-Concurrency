@@ -1,4 +1,4 @@
-package com.zakharov.Water;
+package com.zakharov.water;
 
 
 import java.util.concurrent.CyclicBarrier;
